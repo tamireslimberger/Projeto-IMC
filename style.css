@@ -1,0 +1,166 @@
+ /* Estilos gerais */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tipografia */
+h1, h2 {
+    color: #ff6b6b;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+/* Calculadora */
+.calculator {
+    background-color: #e6f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.calculator label {
+    display: inline-block;
+    min-width: 120px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Formulários */
+input, select, button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Resultado */
+#result {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #2e86de;
+    min-height: 50px;
+    padding: 10px;
+    background-color: #e8f4f8;
+    border-radius: 5px;
+}
+
+/* Boxes de dicas */
+.tip-box {
+    background-color: #fffacd;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border-left: 5px solid #ffd700;
+}
+
+.tip-box h3 {
+    margin-top: 0;
+    color: #2e86de;
+}
+
+.tip-box ul {
+    padding-left: 20px;
+}
+
+.tip-box li {
+    margin-bottom: 8px;
+}
+
+/* Elementos especiais */
+.food-icon, .exercise-icon {
+    font-size: 2em;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.fun-fact {
+    font-style: italic;
+    background-color: #f8e8ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .calculator label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    
+    input, select, button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
