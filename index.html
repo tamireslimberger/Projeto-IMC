@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC para Crianças</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC para Crianças</h1>
+        
+        <section id="about">
+            <h2>O que é IMC?</h2>
+            <p>IMC significa Índice de Massa Corporal. É um cálculo simples que ajuda a saber se o peso de uma pessoa está adequado para sua altura.</p>
+            <p>Para crianças, o IMC é especial porque leva em conta a idade e o sexo, já que os corpos das crianças estão sempre crescendo e mudando!</p>
+            
+            <div class="fun-fact">
+                <p>✨ Sabia que o IMC foi inventado há mais de 180 anos por um matemático belga chamado Adolphe Quetelet?</p>
+            </div>
+        </section>
+        
+        <section class="calculator">
+            <h2>Vamos calcular seu IMC?</h2>
+            
+            <div>
+                <label for="age">Idade:</label>
+                <input type="number" id="age" min="2" max="18" placeholder="Digite sua idade">
+            </div>
+            
+            <div>
+                <label for="gender">Sexo:</label>
+                <select id="gender">
+                    <option value="male">Menino</option>
+                    <option value="female">Menina</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="height">Altura (cm):</label>
+                <input type="number" id="height" placeholder="Ex: 120">
+            </div>
+            
+            <div>
+                <label for="weight">Peso (kg):</label>
+                <input type="number" id="weight" placeholder="Ex: 30">
+            </div>
+            
+            <button onclick="calculateIMC()">Calcular IMC</button>
+            
+            <div id="result"></div>
+        </section>
+        
+        <section id="healthy-tips">
+            <h2>Dicas Super Saudáveis!</h2>
+            
+            <div class="tip-box">
+                <h3>🍎 Alimentação Divertida</h3>
+                <p>Comer bem não precisa ser chato! Experimente:</p>
+                <ul>
+                    <li>Frutas coloridas - quanto mais cores no prato, melhor!</li>
+                    <li>Legumes cortados em formatos divertidos (estrelas, corações)</li>
+                    <li>Água com gás e pedaços de fruta no lugar de refrigerante</li>
+                    <li>Iogurte natural com granola e mel</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h3>⚽ Exercícios Aventura</h3>
+                <p>Se mexer é uma festa! Tente:</p>
+                <ul>
+                    <li>Pular corda - conte quantas vezes consegue sem errar!</li>
+                    <li>Andar de bicicleta com os amigos</li>
+                    <li>Brincar de pega-pega ou esconde-esconde</li>
+                    <li>Dançar suas músicas favoritas por 15 minutos</li>
+                    <li>Natação - um esporte completo e refrescante</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h3>💤 Descanso Mágico</h3>
+                <p>Dormir bem é super importante para crescer forte:</p>
+                <ul>
+                    <li>Crianças precisam de 9-12 horas de sono por noite</li>
+                    <li>Desligar tablets e celulares 1 hora antes de dormir</li>
+                    <li>Ler um livro gostoso antes de apagar as luzes</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="results-explanation">
+            <h2>O que seu IMC significa?</h2>
+            <p>Depois de calcular, veja aqui o que o resultado quer dizer:</p>
+            
+            <ul>
+                <li><strong>Abaixo do peso:</strong> Seu peso está baixo para sua idade e altura. Um nutricionista pode ajudar!</li>
+                <li><strong>Peso saudável:</strong> Parabéns! Você está no caminho certo.</li>
+                <li><strong>Sobrepeso:</strong> Seu peso está um pouco alto. Mais exercícios e alimentação balanceada ajudam.</li>
+                <li><strong>Obesidade:</strong> Seu peso está muito alto. Um médico pode dar ótimas dicas para melhorar.</li>
+            </ul>
+            
+            <p>Lembre-se: o IMC é apenas uma ferramenta. O médico é quem sabe realmente como está sua saúde!</p>
+        </section>
+        
+        <footer>
+            <p>Site criado com ❤️ para crianças saudáveis e felizes!</p>
+            <p>Lembre-se de sempre consultar um médico ou nutricionista para orientações pessoais.</p>
+        </footer>
+    </div>
+
+    <script>
+        function calculateIMC() {
+            // Pegar valores dos inputs
+            const age = parseInt(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            const height = parseFloat(document.getElementById('height').value) / 100; // converter para metros
+            const weight = parseFloat(document.getElementById('weight').value);
+            
+            // Validar entradas
+            if (isNaN(age) || isNaN(height) || isNaN(weight) || age < 2 || age > 18) {
+                alert("Por favor, preencha todos os campos corretamente! Idade deve ser entre 2 e 18 anos.");
+                return;
+            }
+            
+            // Calcular IMC
+            const imc = weight / (height * height);
+            
+            // Interpretar resultado (simplificado para crianças)
+            let message;
+            if (imc < 18.5) {
+                message = "Abaixo do peso. Vamos conversar com um nutricionista para dicas legais!";
+            } else if (imc < 25) {
+                message = "Peso saudável! Você está indo muito bem!";
+            } else if (imc < 30) {
+                message = "Sobrepeso. Que tal brincar mais e comer mais frutas?";
+            } else {
+                message = "Obesidade. Um médico pode ajudar a encontrar o melhor caminho!";
+            }
+            
+            // Mostrar resultado
+            document.getElementById('result').innerHTML = 
+                `Seu IMC é ${imc.toFixed(1)}. ${message}`;
+        }
+    </script>
+</body>
+</html>
