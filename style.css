@@ -60,7 +60,7 @@ input, select, button {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1em;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
 }
 
 input:focus, select:focus {
